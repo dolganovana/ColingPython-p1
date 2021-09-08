@@ -17,4 +17,8 @@
 4. Вставляем картинку для мотивации:
 ![alt text](https://newfastuff.com/wp-content/uploads/2019/06/j0UqP6m.png "You're breathtaking")
    
+ Теперь можно начать писать `код`.
  
+ ```python
+print "Привет, мир!"
+```
