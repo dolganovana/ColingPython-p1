@@ -1,8 +1,5 @@
-## Markdown
+## Давайте поэкспериментируем
+#### С этим файлом
 -------------
-
-...is really just ordinary text, *plain and simple*. How is it good for you?
-
-- You just **type naturally**, and the result looks good.
-- You **don't have to worry** about clicking formatting buttons.
-  - Or fiddling with indentation. (Two spaces is all you need.)
+Для этого нужно изучить язык *markdown*
+Как им пользоваться, можно [почитать здесь](https://github.com/adam-p/markdown-here/wiki/Markdown-Here-Cheatsheet)
