@@ -19,7 +19,6 @@ Inline-style:
 ![alt text](https://github.com/adam-p/markdown-here/raw/master/src/common/images/icon48.png "Logo Title Text 1")
 
 
-![alt text][logo]
-[logo]: https://newfastuff.com/wp-content/uploads/2019/06/j0UqP6m.png "You're breathtaking"
+![alt text](https://newfastuff.com/wp-content/uploads/2019/06/j0UqP6m.png "You're breathtaking")
    
  
