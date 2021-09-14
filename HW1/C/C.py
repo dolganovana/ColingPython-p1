@@ -1,3 +1,5 @@
 def solution(n, k):
-    ### YOUR CODE HERE ###
+    result = k//n
+    ostatok = k - n * result
+    print(result, ostatok)
     return
