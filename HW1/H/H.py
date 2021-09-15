@@ -1,3 +1,6 @@
 def solution(a):
-    ### YOUR CODE ###
+    
+    t_a = zip(*a)
+    print(list(t_a))
+
     return
