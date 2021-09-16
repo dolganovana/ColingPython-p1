@@ -1,10 +1,10 @@
 def solution(a, b):
     
-     unite = a.copy()
+     unite = b.copy()
      print(unite)
 
-    for i in b:
-        if not (i in a):
+    for i in a:
+        if not (i in b):
             print(i)
             unite.append(i)
 
