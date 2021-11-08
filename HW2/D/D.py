@@ -7,18 +7,27 @@ def solution(n,k):
         my_list.append(c)
         c += 1
 
-    while t:
-        for i in my_list:
-            #print(i, count)
-            if count == k:
-                my_list.remove(i)
-                #print(i, count, my_list)
-                count = 1 
-            else:
-                count += 1
+    if k == 1:
+        final = n
+    else:
+        while t:
+            for i in my_list:
+                #print(i)
+                if count == k:
+                    #print(my_list, i)
+                    if my_list.index(i) + 1 == len(my_list):
+                        count = 1
+                    else:
+                        count = 2
+                    my_list.remove(i)
+                else:
+                    count += 1
 
-        if len(my_list) == 1:
-            t = False
-    print(my_list)
+            if len(my_list) == 1:
+                t = False
 
-    return my_list[0]
+
+
+        final = my_list[0]
+
+    return final
