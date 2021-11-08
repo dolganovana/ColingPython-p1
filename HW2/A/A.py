@@ -8,5 +8,5 @@ def solution(arr):
                 maxim = count
         else:
             count = 1
-    print(maxim)
-    return
+
+    return maxim
