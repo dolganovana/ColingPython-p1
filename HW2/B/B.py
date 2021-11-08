@@ -9,5 +9,4 @@ def solution(x):
                 newstring = newstring + mystring[i]
 
     newstring = newstring.replace("1", "one")
-    print(newstring)
-    return
+    return newstring
