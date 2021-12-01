@@ -1,6 +1,5 @@
 def solution(a):
     
     t_a = zip(*a)
-    print(list(t_a))
 
-    return
+    return list(t_a)
