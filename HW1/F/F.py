@@ -6,7 +6,5 @@ def solution(n):
     while stepen <= n:
         stepeni.append(stepen)
         stepen = stepen * 2
-
-    print(stepeni)
-
-    return
+        
+    return stepeni
