@@ -1,7 +1,3 @@
 def solution(n):
-    print(n * "   _~_   ")
-    print(n * "  (o o)  ")
-    print(n * " /  V  \ ")
-    print(n * "/(  _  )\")
-    print(n * "  ^^ ^^  ")
-    return
+    
+    return print(n * "   _~_    " + "\n" + n * "  (o o)   " + "\n" + n * " /  V  \  " + "\n" + n * "/(  _  )\ " + "\n" + n * "  ^^ ^^   " )
