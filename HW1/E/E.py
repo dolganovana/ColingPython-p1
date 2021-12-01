@@ -6,6 +6,4 @@ def solution(x1, y1, x2, y2):
         if abs(y2 - y1) < 2:
             check = True
             
-    print(check)
-
-    return
+    return check
