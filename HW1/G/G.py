@@ -9,6 +9,5 @@ def solution(a, b):
             unite.append(i)
 
     unite.sort()
-    print(unite)
 
-    return
+    return unite
