@@ -1,3 +1,11 @@
 def solution(a, b):
-    ### YOUR CODE ###
-    return
+    new = a.copy()
+    for i in b:
+        if i in a:
+            continue
+        else:
+            new.append(i)
+
+    new.sort()
+
+    return new
