@@ -1,0 +1,83 @@
+class SpaceObject:
+    def __init__(self, name=None):
+        self.name = name
+
+
+class Planet(SpaceObject):
+
+    def __init__(self, name=None, population=None):
+        super().__init__(name)
+        self.population = population or []
+
+    def __str__(self):
+        if self.name:
+            return f'Welcome to planet {self.name}! Inhabitants of this planet: {", ".join([str(animal) for animal in self.population])}'
+        elif self.population:
+            return f"No name. Inhabitants of this planet: {', '.join([str(animal) for animal in self.population])}"
+        return "No name, no inhabitants. Sad and alone"
+
+    def live(self, *inhabits):
+        for inhabit in inhabits:
+            self.population.append(inhabit)
+
+
+class Animal:
+    def __init__(self, name=None, tail=False, food=5):
+        self.name = name
+        self.tail = tail
+        self.food = food
+       
+    def __str__(self):
+        return self.name
+
+    def feed(self):
+        self.food += 1
+        return "I'm less hungry now"
+
+
+class Cat(Animal):
+    def __init__(self, name=None, tail = True, food=-2):
+        self.name = name
+        self.tail = tail
+        self.food = food
+
+    def mew(self):
+        return f'{self.name}: mew!'
+
+
+class Dog(Animal):
+    def __init__(self, name=None, tail = True, food=100):
+        self.name = name
+        self.tail = tail
+        self.food = food
+        
+    def bark(self):
+        return f'{self.name}: woof-woof'
+
+
+class Komar(Animal):
+    def __init__(self, name=None, tail = False):
+        self.name = name
+        self.tail = tail
+
+    def fly_around(self):
+        print("Sooner or later I'll sting you!")
+
+
+
+def main():
+    earth = Planet('Tatuin')
+
+    cat1 = Cat('Eliza')
+    cat2 = Cat('Her Majesty')
+    dog = Dog('Goofy')
+    komar1 = Komar('Itchy')
+    komar2 = Komar('Ouch')
+    komar3 = Komar('Bzzy')
+
+    earth.live(cat1, cat2, dog, komar1, komar2, komar3)
+    print(earth)
+
+
+if __name__ == '__main__':
+    main()
