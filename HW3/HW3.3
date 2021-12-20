@@ -1,1 +1,76 @@
+import pickle
 
+class UnigramMorphAnalyzer:
+    dict_pos = {}
+    dict_token = {}
+    file_name = 'pos_data.txt'
+
+
+    def __init_(self, file_name):
+        self.file_name = file_name
+        self.dict_pos = {}
+        self.dict_token = dict_token
+        
+    def __getitem__(self, key):
+        return self.dict_pos[key]
+
+    def save(self):
+        with open('morph_pkl', 'wb') as file:
+            pickle.dump(self.dict_pos, file)
+
+    def load(self):
+        with open('morph_pkl', 'rb') as file:
+            self.dict_pos = pickle.load(file)
+
+    def train(self):
+        with open(self.file_name, 'r', encoding='utf8') as file:
+            for line in file:
+                line = line.split(' ')
+                token = line[0]
+                pos = line[1][:-1]
+                if pos == 'PNCT':
+                    continue
+                for i in range(1, 5):
+                    if i == len(token) + 1:
+                        break
+                    nummm = 0 - i
+                    ending = token[nummm:]
+                    if ending in list(self.dict_pos.keys()):
+                        if pos in list(self.dict_pos[ending].keys()):
+                            self.dict_pos[ending][pos] = self.dict_pos[ending][pos] + 1
+                        else:
+                            self.dict_pos[ending][pos] = 1
+                    else:
+                        self.dict_pos[ending] = {}
+                        self.dict_pos[ending][pos] = 1
+        return self.dict_pos
+
+
+    def predict(self, token):
+        self.token = token
+        for i in range(1, 5):
+            if i == len(token) + 1:
+                break
+            numer = 0 - i
+            ending = self.token[numer:]  
+            for key in list(self.dict_pos.keys()):
+                if ending == key:
+                    for pos in list(self.dict_pos[key].keys()):
+                        if pos in self.dict_token.keys():
+                            self.dict_token[pos] += self.dict_pos[key][pos]
+                        else:
+                            self.dict_token[pos] = self.dict_pos[key][pos]
+
+        summa = sum(list(self.dict_token.values()))
+        for key in self.dict_token:
+            nummer = self.dict_token[key]
+            self.dict_token[key] = int((nummer / summa) * 100000) / 100000
+        return self.dict_token
+      
+
+analyzer = UnigramMorphAnalyzer() 
+dict_pos = analyzer.train()
+probs = analyzer.predict('русский')
+print(probs)
+analyzer['кий']
+analyzer.save()
