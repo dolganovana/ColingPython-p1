@@ -1,8 +1,7 @@
-import sys
 import requests
-from collections import Counter
+import sys
 from pprint import pprint
-
+from collections import Counter
 
 class GitHubUser:
 
@@ -22,7 +21,6 @@ class GitHubUser:
         langs = Counter()
         for repo in self.repos_url:
             langs.update([repo['language']])
-
         return {l: rs for l, rs in langs.most_common()}
 
     def find_tops(users):
@@ -50,19 +48,16 @@ class GitHubUser:
             print(users.index(i) + 1, i)
         n = int(input('Введите номер пользователя: '))
         username = users[n-1]
-
         user = GitHubUser(username)
         print('\nРепозиторий: описание')
         pprint(user.get_repo())
-        print('\nЯзыки: количество репозиториев')
+        print('\nЯзыки: количество')
         pprint(user.get_lang())
-
 
     def main():
         users = sys.argv[1:]
         find_user(users)
         find_tops(users)
-
 
 if __name__ == '__main__':
     main()
